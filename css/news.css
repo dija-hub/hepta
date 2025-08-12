@@ -184,19 +184,21 @@ h2 {
 }
 
 .post {
-  width: 350px;
+  width: 400px;
   height: auto; 
   background-color: #ffffff;
   padding: 20px;
   margin: 0 auto; 
-  margin-left:1300px;
+  margin-left:1250px;
   margin-top:-1200px;
+  position:relative;
+
+
 }
 
 .post-cont {
   display: flex;
   flex-direction: column; 
-  align-items: center;
   gap: 20px; 
   padding:10px;
 }
@@ -207,6 +209,7 @@ h2 {
   height: auto; 
   display: block; 
 }
+
 
 .categories {
   width: 300px;
