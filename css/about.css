@@ -521,3 +521,108 @@ footer {
   color: #fff;
 }
 
+/* ======================
+   Responsive Design
+   ====================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero {
+    height: auto;
+  }
+
+  .hero img {
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .hero h2 {
+    font-size: 3.5rem;
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    width: 80%;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .intro img {
+    margin: 0 auto 20px auto;
+    height: auto;
+    max-width: 90%;
+  }
+
+  .intro-text {
+    padding: 0;
+  }
+
+  .intro-text h1 {
+    margin: 20px 0;
+  }
+
+  .intro-text p {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .btn button {
+    margin: 20px auto;
+    width: 50%;
+  }
+
+  .destination h4,
+  .dest-p {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .slider-container,
+  .slider,
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+
+  .images {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .images img {
+    width: 300px;
+    height: auto;
+  }
+
+  .footer-container {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .footer-column {
+    margin-top: 30px;
+    width: 45%;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  /* Navbar */
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
