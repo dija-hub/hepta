@@ -626,3 +626,120 @@ footer {
     position: absolute;
     top: 60px;
     left: 0;
+    right: 0;
+    background: black;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  .hero img {
+    height: 300px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+    top: 20%;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    top: 40%;
+    width: 90%;
+  }
+
+  .btn button {
+    width: 70%;
+  }
+
+  .images img {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .footer-column {
+    width: 100%;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    display: flex;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .hero img {
+    height: 220px;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+    top: 15%;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    top: 32%;
+  }
+
+  .intro-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro-text p {
+    font-size: 0.9rem;
+  }
+
+  .btn button {
+    width: 90%;
+  }
+
+  .destination h4 {
+    font-size: 2rem;
+  }
+
+  .images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .images img {
+    width: 90%;
+    max-width: 250px;
+  }
+
+  .team h4 {
+    font-size: 2rem;
+  }
+
+  .footer-column {
+    padding: 10px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+}
