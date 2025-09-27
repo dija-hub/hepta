@@ -54,13 +54,23 @@
             <br>
             <br>
             A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-      </div>
-      <div class="experience">
-             <div id="experience-content">
-                 
-                  <h1>Experience Once In Your Life Time</h1>
-                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            </div>
+                          
+   <a href="#" id="open-video" class="video-link">🎥 Watch My Stuffed Granny</a>
+  
+<div id="video-overlay" aria-hidden="true" style="display:none;">
+  <div id="video-container" role="dialog" aria-label="Video player">
+    <button id="video-close" aria-label="Close video">✖</button>
+
+    <iframe id="vimeo-iframe"
+            data-src="https://player.vimeo.com/video/93951774"
+            src=""
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            title="My Stuffed Granny"></iframe>
+  </div>
+</div>
+
+ 
             <div class="resorces">
                   
                         
@@ -354,4 +364,47 @@
 
     </footer>
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const openBtn = document.getElementById('open-video');
+  const overlay = document.getElementById('video-overlay');
+  const iframe = document.getElementById('vimeo-iframe');
+  const closeBtn = document.getElementById('video-close');
+
+  if (!openBtn || !overlay || !iframe || !closeBtn) return; // safety check
+
+  const srcBase = iframe.dataset.src || '';
+
+  function openVideo(e) {
+    e && e.preventDefault();
+    // set src with autoplay
+    iframe.src = srcBase + '?autoplay=1';
+    overlay.style.display = 'flex';
+    overlay.setAttribute('aria-hidden', 'false');
+    // prevent background scroll
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideo() {
+    // remove src to stop playback
+    iframe.src = '';
+    overlay.style.display = 'none';
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openBtn.addEventListener('click', openVideo);
+  closeBtn.addEventListener('click', closeVideo);
+  // click outside video to close
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeVideo();
+  });
+
+  // allow Esc to close
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.style.display === 'flex') closeVideo();
+  });
+});
+</script>
+
 </html>

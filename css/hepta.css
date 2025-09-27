@@ -120,7 +120,7 @@ main {
   color: #000000;
   font-size: 3rem;
   position: absolute;
-  top: 5%;
+  top:-200%;
   left: 55%;
 }
 
@@ -128,7 +128,7 @@ main {
   position: absolute;
   color: grey;
   line-height: 1.86;
-  top: 7%;
+  top: -150%;
   left: 55%;
   width: 40%;
   font-size: 1.5rem;
@@ -136,7 +136,7 @@ main {
 
 .experience {
   width: 100%;
-  margin-top: 100px;
+  margin-top: 200px;
   height: 1300px;
   background-color: rgba(171, 166, 166, 0.2);
   position: relative;
@@ -695,9 +695,3 @@ footer {
   color: #fff;
 }
 
-@media (max-width: 768px) {
-    .footer-column {
-        flex: 100%;
-        margin-bottom: 30px;
-    }
-}
