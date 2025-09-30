@@ -55,12 +55,12 @@
             <br>
             A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                           
-   <a href="#" id="open-video" class="video-link video-btn">🎥 Watch My Stuffed Granny</a>
-  
-<div id="video-overlay" aria-hidden="true" style="display:none;">
+<!-- Add this inside your hero section or where you want the video button -->
+<a href="#" id="open-video" class="video-btn">▶ Watch The Video</a>
+
+<div id="video-overlay" aria-hidden="true">
   <div id="video-container" role="dialog" aria-label="Video player">
     <button id="video-close" aria-label="Close video">✖</button>
-
     <iframe id="vimeo-iframe"
             data-src="https://player.vimeo.com/video/93951774"
             src=""
@@ -70,44 +70,65 @@
   </div>
 </div>
 
+
  
-            <div class="resorces">
-        
-                  <div class="food">
-                        <img src="/img/food-img.svg">
-                        <h4>Good Food</h4>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                  <div class="travel">
-                        <img src="/img/travel-hepta.svg">
-                        <h4>Travel Anywhere</h4>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                    <div class="airplane">
-                        <img src="/img/airplane-hepta.svg">
-                        <h4>Travel Anywhere</h4>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                  
-                  
-                     <div class="resort">
-                        <img src="/img/resort-hepta.svg">
-                        <h4>Travel Anywhere</h4>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                        <div class="mountain">
-                        <img src="/img/mountains-hepta.svg">
-                        <h4>Travel Anywhere</h4>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                            <div class="baloon">
-                        <img src="/img/air-balloon-hepta.svg">
-                        <h4>Travel Anywhere</h4>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-                  
-            </div>
-      </div>
+            <section class="experience">
+  <div class="experience-header">
+    <h2>Experience Once In Your Life Time</h2>
+    <p>
+      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+      there live the blind texts. Separated they live in Bookmarksgrove right at the coast
+      of the Semantics, a large language ocean.
+    </p>
+  </div>
+
+  <div class="resources">
+    <div class="item">
+      <img src="img/food.jpg" alt="Good Foods">
+      <h4>Good Foods</h4>
+      <p>
+        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+        there live the blind texts.
+      </p>
+    </div>
+
+    <div class="item">
+      <img src="img/travel.jpg" alt="Travel Anywhere">
+      <h4>Travel Anywhere</h4>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+        there live the blind texts.</p>
+    </div>
+
+    <div class="item">
+      <img src="img/airplane.jpg" alt="Airplane">
+      <h4>Airplane</h4>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+        there live the blind texts.</p>
+    </div>
+
+    <div class="item">
+      <img src="img/resort.jpg" alt="Beach Resort">
+      <h4>Beach Resort</h4>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+        there live the blind texts.</p>
+    </div>
+
+    <div class="item">
+      <img src="img/mountain.jpg" alt="Mountain Climbing">
+      <h4>Mountain Climbing</h4>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+        there live the blind texts.</p>
+    </div>
+
+    <div class="item">
+      <img src="img/balloon.jpg" alt="Hot Air Balloon">
+      <h4>Hot Air Balloon</h4>
+      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+        there live the blind texts.</p>
+    </div>
+  </div>
+</section>
+
    <div class="management">
  
       <body class="custom-bg">
@@ -360,28 +381,25 @@
     </footer>
 </body>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   const openBtn = document.getElementById('open-video');
   const overlay = document.getElementById('video-overlay');
   const iframe = document.getElementById('vimeo-iframe');
   const closeBtn = document.getElementById('video-close');
 
-  if (!openBtn || !overlay || !iframe || !closeBtn) return; // safety check
+  if (!openBtn || !overlay || !iframe || !closeBtn) return;
 
-  const srcBase = iframe.dataset.src || '';
+  const srcBase = iframe.dataset.src;
 
   function openVideo(e) {
-    e && e.preventDefault();
-    // set src with autoplay
+    e.preventDefault();
     iframe.src = srcBase + '?autoplay=1';
     overlay.style.display = 'flex';
     overlay.setAttribute('aria-hidden', 'false');
-    // prevent background scroll
     document.body.style.overflow = 'hidden';
   }
 
   function closeVideo() {
-    // remove src to stop playback
     iframe.src = '';
     overlay.style.display = 'none';
     overlay.setAttribute('aria-hidden', 'true');
@@ -390,16 +408,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   openBtn.addEventListener('click', openVideo);
   closeBtn.addEventListener('click', closeVideo);
-  // click outside video to close
-  overlay.addEventListener('click', function (e) {
+
+  overlay.addEventListener('click', function(e) {
     if (e.target === overlay) closeVideo();
   });
 
-  // allow Esc to close
-  document.addEventListener('keydown', function (e) {
+  document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && overlay.style.display === 'flex') closeVideo();
   });
 });
+
 </script>
+
 
 </html>
