@@ -176,98 +176,96 @@ main {
 }
 
 
- .intro img {
-  width: 500px;
-  position:relative;
-  top: 10%;
-  left: 17%;
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 80px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.intro-text h1 {
-  color: #000000;
-  font-size: 2rem;
-  position: absolute;
-  left: 55%;
-  top:3.9%
+.intro-image {
+  flex: 1;
+  text-align: left;
 }
 
-.intro-text p {
-  position: absolute;
-  color: grey;
-  line-height: 1.86;
-  top: 5%;
-  left: 55%;
-  width: 40%;
-  font-size: 20px;
+.intro-image img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
+.intro-text {
+  flex: 1;
+  text-align: left;
+}
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .intro {
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     text-align: center;
-    gap: 40px;
   }
+  .intro-text {
+    text-align: center;
+  }
+  .intro-image {
+    text-align: center;
+  }
+}
 
-  .intro .image,
-  .intro .text {
-    flex: 1;
-  }
-} 
 
 .experience {
-  width: 100%;
-  margin-top: 100px;
-  padding: 2rem 1rem;
-  background-color: rgba(171, 166, 166, 0.2);
-  position: relative;
-}
-
-#experience-content {
-  max-width: 900px;
-  padding: 20px;
-  margin: 0 auto;
   text-align: center;
+  padding: 50px 20px;
 }
 
-#experience-content h1 {
-  font-size: 2.5rem;
+.experience-header {
+  display: block;   /* makes it flow normally */
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
-#experience-content p {
-  padding: 20px;
-  font-size: 20px;
+.experience-header h2,
+.experience-header p {
+  display: block;   /* ensures p is under h2 */
+  margin: 1rem 0;
 }
+
 
 .resources {
-  /* display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  justify-items: center;
-  margin-top: 2rem; */
-  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.food, .travel, .airplane, .resort, .mountain, .baloon {
-  width: 250px;
-  height: auto;
-  padding: 20px;
-  margin: 0;
+.resources .item {
   text-align: center;
+}
+
+.resources .item img {
+  width: 100px;
+  height: auto;  /* makes image full, not cropped */
+  border-radius: 10px;
+}
+
+.resources .item h4 {
+  margin: 15px 0 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.resources .item p {
+  color: gray;
+  font-size: 0.95rem;
   
 }
 
-.food h4, .travel h4, .airplane h4, .resort h4, .mountain h4, .baloon h4 {
-  font-weight: 800;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.food p, .travel p, .airplane p, .resort p, .mountain p, .baloon p {
-  color: grey;
-  font-size: 1rem;
-}
 
 @media (min-width: 768px) {
   .resources { grid-template-columns: repeat(2, 1fr); }
@@ -454,12 +452,10 @@ input[type="radio"] {
 
 
 .blog {
-  height: 900px;
-  width: 100%;
-  background-color: #65C0BA;
-  padding:15px;
-  
+  margin-top: 80px; /* pushes blog section down */
+  text-align: center;
 }
+
 
 .h1{
       
@@ -482,30 +478,23 @@ input[type="radio"] {
   text-align: center;
 }
 
+
 .blog-posts-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
   gap: 20px;
+  justify-content: center;
   margin-top: 40px;
 }
 
 .blog-post {
-  background-color: white;
-  width: 335px;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 300px;
+  background: #fff;
+  text-align: left;
 }
 
 .blog-post img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
